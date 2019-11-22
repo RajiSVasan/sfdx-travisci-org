@@ -18,5 +18,5 @@ before_script:
 - sfdx --version
 - sfdx plugins --core
 script:
-- sfdx force:auth:jwt:grant -r https://login.salesforce.com -i ${CONSUMER_KEY} -f assets/server.key -u rajisvasan@eatrail.com -a UAT
+- sfdx force:auth:jwt:grant -r https://login.salesforce.com -i ${CONSUMERKEY} -f assets/server.key -u rajisvasan@eatrail.com -a UAT
 - sfdx force:mdapi:deploy --wait 10 --deploydir $DEPLOYDIR --targetusername UAT --testlevel $TESTLEVEL
