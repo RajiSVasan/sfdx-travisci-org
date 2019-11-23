@@ -8,6 +8,7 @@ before_install:
 - export SFDX_DOMAIN_RETRY=300
 - export SFDX_DISABLE_APP_HUB=true
 - export SFDX_LOG_LEVEL=DEBUG
+- export SFDX_AUDIENCE_URL=https://login.salesforce.com
 - mkdir sfdx
 - wget -qO- $CLIURL | tar xJ -C sfdx --strip-components 1
 - "./sfdx/install"
