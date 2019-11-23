@@ -15,8 +15,11 @@ before_install:
 before_script:
 - export DEPLOYDIR=src
 - export TESTLEVEL=RunLocalTests
+- export SFURL=https://login.salesforce.com
+- export CKEY=3MVG9vrJTfRxlfl6dBs0pvx.BScLRsKzx1S6xpB.gttH9AlgHegTavWdstmTnylyTl0KnvTRQV395j1N0OFny
+- export UNAME=rajisvasan@eatrail.com
 - sfdx --version
 - sfdx plugins --core
 script:
-- sfdx force:auth:jwt:grant -r https://login.salesforce.com -i 3MVG9vrJTfRxlfl6dBs0pvx.BScLRsKzx1S6xpB.gttH9AlgHegTavWdstmTnylyTl0KnvTRQV395j1N0OFny -f assets/server.key -u rajisvasan@eatrail.com
+- sfdx force:auth:jwt:grant -r $SFURL -i $CKEY -f assets/server.key -u $UNAME
 - sfdx force:mdapi:deploy -w 10 -d $DEPLOYDIR -u UAT
