@@ -23,4 +23,4 @@ before_script:
 - sfdx plugins --core
 script:
 - sfdx force:auth:jwt:grant -i $CKEY -f assets/server.key -u $UNAME -r $SFURL -a UAT
-- sfdx force:mdapi:deploy -w 10 -d $DEPLOYDIR -u UAT
+- sfdx force:mdapi:deploy -w 10 -d $DEPLOYDIR -u UAT -c 
